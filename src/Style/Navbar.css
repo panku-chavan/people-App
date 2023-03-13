@@ -1,0 +1,9 @@
+.nav-item{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    background-color: rgb(114, 194, 247);
+}
+.nav-link{
+    margin: 10px;
+}
