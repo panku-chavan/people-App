@@ -1,6 +1,6 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
-const pekopleSchema=mongoose.Schema({
+const pekopleSchema =  mongoose.Schema({
     name:{
         type:String,
         required:true
@@ -28,4 +28,4 @@ const pekopleSchema=mongoose.Schema({
     }
 });
 
-module.exports=mongoose.model('People',pekopleSchema);
+module.exports = mongoose.model('People',pekopleSchema);
