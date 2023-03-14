@@ -1,9 +1,10 @@
 .nav-item{
     display: flex;
     justify-content: end;
-    width: 100%;
-    background-color: rgb(114, 194, 247);
+    background-color: rgb(150, 178, 238);
+
 }
 .nav-link{
     margin: 10px;
+    color: black;
 }
