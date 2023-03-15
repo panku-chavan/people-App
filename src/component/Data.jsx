@@ -12,8 +12,8 @@ export const Data = () => {
 
     return (
         <div className="container-lg">
-            <h3 className="text-center">Details</h3>
-            <table className="table shadow p-3 mb-5 bg-white rounded">
+            <h3 className="text-center mb-5">Details</h3>
+            <table className="table table-hover shadow p-3 mb-5 bg-white rounded">
                 <tbody>
                 <tr>
                     <td><h5>Name</h5></td>

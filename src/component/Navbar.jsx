@@ -9,7 +9,11 @@ export const Navbar=()=>{
         <div>
             <div className="nav-item">
            { isAuth?
-                <h4 ><NavLink className="nav-link" to={'/logout'} onClick={()=>{logoutUser()}}>Logout</NavLink></h4> :
+                <>
+                <h4><NavLink className="nav-link" to={'/data'}>Detailes</NavLink></h4>
+                <h4><NavLink className="nav-link" to={'/add'}>Add Details</NavLink></h4>
+                <h4 ><NavLink className="nav-link" to={'/logout'} onClick={()=>{logoutUser()}}>Logout</NavLink></h4>
+                </> :
                 <>
                 <h4 ><NavLink to={'/'} className="nav-link">Home</NavLink></h4>
                 <h4 ><NavLink to={'/login'} className="nav-link">Login</NavLink></h4>
