@@ -15,6 +15,7 @@ const handleDelete=(id)=>{
    console.log(id)
    axios.delete(`http://localhost:5000/delete/${id}`);
    window.location.reload(false);
+   
 }
     return (
         <div className="container-lg">
