@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { BsTrashFill } from "react-icons/bs";
+
 
 export const Data = () => {
     const [data, setData] = useState([]);
@@ -9,7 +11,11 @@ export const Data = () => {
     }, [])
     //console.log(data)
 
-
+const handleDelete=(id)=>{
+   console.log(id)
+   axios.delete(`http://localhost:5000/delete/${id}`);
+   window.location.reload(false);
+}
     return (
         <div className="container-lg">
             <h3 className="text-center mb-5">Details</h3>
@@ -34,6 +40,7 @@ export const Data = () => {
                                     <td>{elem.mobile}</td>
                                     <td>{elem.dob}</td>
                                     <td>{elem.gender}</td>
+                                    <td><span className="btn" onClick={()=>handleDelete(elem._id)}><BsTrashFill/></span></td>
                                 </tr>
                             </tbody>
                         )

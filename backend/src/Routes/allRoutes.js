@@ -26,7 +26,7 @@ router.route('/peoples/names').get(async (req, res, next) => {
 router.route("/peoples/:id").get(async (req, res, next) => {
     const id = req.params.id;
     try {
-        const people=await People.findById(id);
+        const people = await People.findById(id);
         res.status(200).json(people);
 
     } catch (err) {
@@ -37,16 +37,25 @@ router.route("/peoples/:id").get(async (req, res, next) => {
 });
 
 router.route('/peoples').post(async (req, res, next) => {
-    let people= new People({
-        name:req.body.name,
-        email:req.body.email,
-        mobile:req.body.mobile,
-        dob:req.body.dob,
-        gender:req.body.gender
+    let people = new People({
+        name: req.body.name,
+        email: req.body.email,
+        mobile: req.body.mobile,
+        dob: req.body.dob,
+        gender: req.body.gender
     });
     await people.save();
     res.send(people);
 });
 
+router.route('/delete/:id').delete(async (req, res, next) => {
+    const id = req.params.id;
+    try {
+        await People.deleteOne({ _id: id });
+        res.send("deleted successfull");
+    }catch(err){
+        res.send(err)
+    }
+})
 
 module.exports = router;
