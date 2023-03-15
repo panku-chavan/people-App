@@ -36,6 +36,17 @@ router.route("/peoples/:id").get(async (req, res, next) => {
 
 });
 
+router.route('/peoples').post(async (req, res, next) => {
+    let people= new People({
+        name:req.body.name,
+        email:req.body.email,
+        mobile:req.body.mobile,
+        dob:req.body.dob,
+        gender:req.body.gender
+    });
+    await people.save();
+    res.send(people);
+});
 
 
 module.exports = router;
