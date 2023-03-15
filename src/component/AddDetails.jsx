@@ -23,7 +23,7 @@ export const AddDetails = () => {
                 .then((res) => console.log(res))
                 .catch((err) => console.log(err))
         }else{
-            
+
         }
 
 
@@ -54,8 +54,13 @@ export const AddDetails = () => {
                         <input className="form-control" type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
 
                         <label className="form-label" htmlFor="">Gender</label>
-                        <input className="form-control" type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
-
+                        {/* <input className="form-control" type="text" value={gender} onChange={(e) => setGender(e.target.value)} /> */}
+                        <select name="" id="" className="form-control" value={gender} onChange={(e) => setGender(e.target.value)} >
+                            <option value="">select</option>
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                            <option value="other">other</option>
+                        </select>
                         <div className="row d-flex justify-content-center">
                             <input type="submit" className="btn btn-primary mt-4 col-md-2" value="Add" />
                         </div>
