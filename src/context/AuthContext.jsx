@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useRef, useState } from "react";
 
 export const AuthContext=createContext(null);
 
@@ -6,21 +6,24 @@ const AuthContextProvider = ({children})=>{
     const [authState,setAuthState]=useState({
         isAuth:false
     });
-
+    const AuthRef=useRef(authState.isAuth);
+   //console.log(AuthRef.current)
     const loginUser=()=>{
+        AuthRef.current=true;
         setAuthState({
             ...authState,
-            isAuth:true
+            isAuth:AuthRef.current
         });
     }
     const logoutUser=()=>{
+        AuthRef.current=false
         setAuthState({
             ...authState,
-            isAuth:false
+            isAuth:AuthRef.current
         });
     }
     return(
-        <AuthContext.Provider value={{authState:authState,loginUser,logoutUser}}>
+        <AuthContext.Provider value={{authState:AuthRef.current,loginUser,logoutUser}}>
             {children}
         </AuthContext.Provider>
     );

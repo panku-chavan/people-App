@@ -17,7 +17,7 @@ const Login = () => {
     }
     return (
 
-        <div className="container w-50 shadow p-3 mt-5 mb-5 bg-white rounded">
+        <div className="container w-50 shadow p-3 mt-5  bg-white rounded">
             <form action="" onSubmit={HandleSubmit}>
                 <div class="form-group  ">
                     <h2 className=" mb-4">Login</h2>

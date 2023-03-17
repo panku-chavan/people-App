@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const AddDetails = () => {
     const [name, setName] = useState('');
@@ -7,6 +8,7 @@ export const AddDetails = () => {
     const [mobile, setMobile] = useState('');
     const [dob, setDob] = useState('');
     const [gender, setGender] = useState('');
+    const navigate=useNavigate();
     const info = {
         name: name,
         email: email,
@@ -33,7 +35,7 @@ export const AddDetails = () => {
         setGender('');
         setEmail('');
         setDob('');
-
+        navigate('/data');
     }
     return (
         <div className="container-sm">

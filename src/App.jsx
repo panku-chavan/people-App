@@ -5,10 +5,14 @@ import { AllRoutes } from './routes/AllRoutes';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <AllRoutes/>
-    </div>
+    <body style={{ backgroundColor: "pink" }}>
+      <div  className="App">
+        <Navbar />
+        <div style={{ paddingBottom:"18rem"}}>
+          <AllRoutes />
+        </div>
+      </div>
+    </body>
   );
 }
 
