@@ -2,10 +2,10 @@ const express=require('express');
 const mongoose=require('mongoose');
 require('dotenv').config();
 const app=require('./app');
-const port= 5000;
+const port=process.env.port || 5000;
 
-const Database_url='mongodb://127.0.0.1:27017/peoples';
-
+//const Database_url='mongodb://127.0.0.1:27017/peoples';
+const Database_url=process.env.DATABASE_URI;
 
 mongoose.connect(Database_url,{useNewUrlParser: true,useUnifiedTopology: true });
 
