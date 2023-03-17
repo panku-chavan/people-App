@@ -1,5 +1,7 @@
 export const Logout=()=>{
     return(
-        <h1>Logout successfull</h1>
+       <div className="text-center">
+         <h1>Logout successfull</h1>
+       </div>
     )
 }

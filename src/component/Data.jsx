@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BsTrashFill } from "react-icons/bs";
+import { DeleteModal } from "./modal/DeleteModal";
 
 
 export const Data = () => {
@@ -49,7 +50,7 @@ const handleDelete=(id)=>{
                 }
 
             </table>
-
+     <DeleteModal/>
         </div>
     )
 }

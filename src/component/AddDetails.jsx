@@ -12,7 +12,7 @@ export const AddDetails = () => {
         email: email,
         mobile: mobile,
         dob: dob,
-        gender, gender
+        gender: gender
     }
     const handleSubmit = (event) => {
         event.preventDefault();
