@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Button, Modal } from "react-bootstrap"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const EditModal = ({ id, show, closeEdit, name1, email1, mobile1, dob1, gender1 }) => {
     const [name, setName] = useState('');
@@ -8,7 +10,9 @@ export const EditModal = ({ id, show, closeEdit, name1, email1, mobile1, dob1, g
     const [mobile, setMobile] = useState('');
     const [dob, setDob] = useState('');
     const [gender, setGender] = useState('');
-
+    const notify = () => {
+        toast("Data updated successfully.....");
+    }
     useEffect(() => {
         setName(name1);
         setEmail(email1);
@@ -31,6 +35,7 @@ export const EditModal = ({ id, show, closeEdit, name1, email1, mobile1, dob1, g
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err))
         closeEdit();
+        notify();
         // setName('');
         // setEmail('');
         // setDob('');
@@ -95,6 +100,9 @@ export const EditModal = ({ id, show, closeEdit, name1, email1, mobile1, dob1, g
 
                 </Modal.Footer>
             </Modal>
+            <div>
+                <ToastContainer />
+            </div>
         </>
     )
 }

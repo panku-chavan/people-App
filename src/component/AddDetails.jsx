@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AddDetails = () => {
     const [name, setName] = useState('');
@@ -8,13 +10,16 @@ export const AddDetails = () => {
     const [mobile, setMobile] = useState('');
     const [dob, setDob] = useState('');
     const [gender, setGender] = useState('');
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const info = {
         name: name,
         email: email,
         mobile: mobile,
         dob: dob,
         gender: gender
+    }
+    const notify=()=>{
+        toast("Data added successfully.....")
     }
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -24,18 +29,19 @@ export const AddDetails = () => {
             axios.post('http://localhost:5000/peoples', info)
                 .then((res) => console.log(res))
                 .catch((err) => console.log(err))
-        }else{
+                notify();
+        } else {
 
         }
 
 
-
+        
         setName('');
         setMobile('');
         setGender('');
         setEmail('');
         setDob('');
-        navigate('/data');
+        ///navigate('/data');
     }
     return (
         <div className="container-sm">
@@ -69,6 +75,7 @@ export const AddDetails = () => {
                     </form>
                 </div>
             </div>
+            <ToastContainer/>
         </div>
     )
 }
