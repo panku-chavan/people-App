@@ -8,8 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export const DeleteModal = ({ id, handleClose, show }) => {
-    
-    const notify=()=>{
+
+    const notify = () => {
         toast("Deleted Successfully....")
     }
     const deleteSuccess = () => {
@@ -36,7 +36,7 @@ export const DeleteModal = ({ id, handleClose, show }) => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <ToastContainer/>
+            <ToastContainer />
         </>
     );
 }
