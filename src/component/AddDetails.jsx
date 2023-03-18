@@ -18,7 +18,7 @@ export const AddDetails = () => {
         dob: dob,
         gender: gender
     }
-    const notify=()=>{
+    const notify = () => {
         toast("Data added successfully.....")
     }
     const handleSubmit = (event) => {
@@ -29,13 +29,13 @@ export const AddDetails = () => {
             axios.post('http://localhost:5000/peoples', info)
                 .then((res) => console.log(res))
                 .catch((err) => console.log(err))
-                notify();
+            notify();
         } else {
 
         }
 
 
-        
+
         setName('');
         setMobile('');
         setGender('');
@@ -75,7 +75,7 @@ export const AddDetails = () => {
                     </form>
                 </div>
             </div>
-            <ToastContainer/>
+            <ToastContainer />
         </div>
     )
 }
