@@ -1,15 +1,21 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [user, setUser] = useState('');
     const [pswd, setPswd] = useState('');
     const navigate = useNavigate();
     const { loginUser }=useContext(AuthContext);
+    const notify=()=>{
+        toast("Login Successfull.");
+    }
     const HandleSubmit = (event) => {
         event.preventDefault();
         if(user==='user' && pswd==='user'){
+            notify();
             loginUser();
             navigate('/data')
         }
@@ -28,6 +34,7 @@ const Login = () => {
                     <button className="btn btn-primary mt-3" type="submit">Login</button>
                 </div>
             </form>
+            <ToastContainer/>
         </div>
     )
 }
