@@ -18,7 +18,7 @@ export const Data = () => {
     useEffect(() => {
         axios.get('http://localhost:5000/peoples')
             .then((res) => setData(res.data));
-    }, [])
+    }, [data])
     //console.log(data)
 
     const handleDelete = (id) => {
@@ -31,7 +31,7 @@ export const Data = () => {
     }
     return (
         <div className="container-lg">
-            <h3 className="text-center mb-5">Details</h3>
+            <h3 className="text-center mb-5 mt-5">Details</h3>
             <table className="table table-hover shadow p-3 mb-5 bg-white rounded">
                 <tbody>
                     <tr>

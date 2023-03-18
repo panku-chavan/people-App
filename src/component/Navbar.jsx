@@ -4,10 +4,10 @@ import { AuthContext } from "../context/AuthContext";
 import "../Style/Navbar.css";
 export const Navbar=()=>{
     const {authState,logoutUser,}=useContext(AuthContext);
-    const isAuth=authState;
+    const isAuth=authState.isAuth;
     return(
         <div>
-            <div className="nav-item shadow p-1 mb-5 ">
+            <div className="nav-item shadow p-1  ">
            { isAuth?
                 <>
                 <h4><NavLink className="nav-link" to={'/data'}>Detailes</NavLink></h4>

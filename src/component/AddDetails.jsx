@@ -39,7 +39,7 @@ export const AddDetails = () => {
     }
     return (
         <div className="container-sm">
-            <h3 className="text-center">Add Details</h3>
+            <h3 className="text-center mt-5 mb-5">Add Details</h3>
             <div className="shadow p-5 mb-5 bg-white rounded">
                 <div className="row d-flex justify-content-center">
                     <form action="" className=" col-md-6 " onSubmit={handleSubmit}>
