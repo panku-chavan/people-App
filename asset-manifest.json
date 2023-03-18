@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/people-App/static/css/main.f5bf4f8c.css",
+    "main.js": "/people-App/static/js/main.c21cff4e.js",
+    "static/js/787.4ff11ca7.chunk.js": "/people-App/static/js/787.4ff11ca7.chunk.js",
+    "static/media/icon.png": "/people-App/static/media/icon.162a34280135f490837e.png",
+    "index.html": "/people-App/index.html",
+    "main.f5bf4f8c.css.map": "/people-App/static/css/main.f5bf4f8c.css.map",
+    "main.c21cff4e.js.map": "/people-App/static/js/main.c21cff4e.js.map",
+    "787.4ff11ca7.chunk.js.map": "/people-App/static/js/787.4ff11ca7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5bf4f8c.css",
+    "static/js/main.c21cff4e.js"
+  ]
+}
