@@ -49,23 +49,23 @@ router.route('/peoples').post(async (req, res, next) => {
     res.send(people);
 });
 
-router.route('/peoples/edit/:id').put(async (req,res)=>{
-   const id=req.params.id;
-   try{
-        const people=await People.findByIdAndUpdate(id,{
+router.route('/peoples/edit/:id').put(async (req, res) => {
+    const id = req.params.id;
+    try {
+        const people = await People.findByIdAndUpdate(id, {
 
-                name: req.body.name,
-                email: req.body.email,
-                mobile: req.body.mobile,
-                dob: req.body.dob,
-                gender: req.body.gender
+            name: req.body.name,
+            email: req.body.email,
+            mobile: req.body.mobile,
+            dob: req.body.dob,
+            gender: req.body.gender
 
-            });
+        });
         res.send("Updated Successfully....");
-   }
-   catch(err){
-    res.send(err);
-   }
+    }
+    catch (err) {
+        res.send(err);
+    }
 })
 
 router.route('/peoples/delete/:id').delete(async (req, res, next) => {
@@ -73,7 +73,7 @@ router.route('/peoples/delete/:id').delete(async (req, res, next) => {
     try {
         await People.deleteOne({ _id: id });
         res.send("deleted successfull");
-    }catch(err){
+    } catch (err) {
         res.send(err)
     }
 })
