@@ -13,6 +13,7 @@ router.route('/peoples').get(async (req, res, next) => {
     }
 });
 
+
 router.route('/peoples/names').get(async (req, res, next) => {
     try {
         let peoples = await People.find({}).select("name");
