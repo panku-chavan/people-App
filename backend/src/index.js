@@ -4,6 +4,11 @@ require('dotenv').config();
 const app=require('./app');
 const port=process.env.port || 5000;
 
+mongoose.set('strictQuery', false); 
+
+// Parse JSON bodies (as sent by API clients)
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
 //const Database_url='mongodb://127.0.0.1:27017/peoples';
 const Database_url=process.env.DATABASE_URI;
 
