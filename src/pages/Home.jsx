@@ -2,10 +2,10 @@ import img from "../assets/icon.png";
 export const Home = () => {
     return (
         <div>
-            <header class="masthead bg-gradient text-white text-center">
-                <div class="container d-flex align-items-center flex-column">
+            <header className="masthead bg-gradient text-white text-center">
+                <div className="container d-flex align-items-center flex-column">
 
-                    <img class="masthead-avatar mt-5 mb-5" src={img} alt="..." />
+                    <img className="masthead-avatar mt-5 mb-5" src={img} alt="..." />
 
 
 
