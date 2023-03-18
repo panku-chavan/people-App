@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 import { BsTrashFill } from "react-icons/bs";
 import { DeleteModal } from "./modal/DeleteModal";
 import { EditModal } from "./modal/EditModal";
-
+import { FiEdit } from "react-icons/fi";
 
 export const Data = () => {
     const [data, setData] = useState([]);
     const [show, setShow] = useState(false);
-    const [showEdit,setShowEdit]=useState(false);
+    const [showEdit, setShowEdit] = useState(false);
 
-    
-    const handleCloseEdit=()=>setShowEdit(false);
+
+    const handleCloseEdit = () => setShowEdit(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -38,7 +38,7 @@ export const Data = () => {
         handleShow();
 
     }
-    const handleEdit=(id,name,email,mobile,dob,gender)=>{
+    const handleEdit = (id, name, email, mobile, dob, gender) => {
         //console.log(id)
         //handleShowEdit()
         setNewId(id);
@@ -73,8 +73,8 @@ export const Data = () => {
                                     <td>{elem.mobile}</td>
                                     <td>{elem.dob}</td>
                                     <td>{elem.gender}</td>
-                                    <td><span className="btn" onClick={()=> handleEdit(elem._id,elem.name,elem.email,elem.mobile,elem.dob,elem.gender)}>edit</span></td>
-                                    <td><span className="btn" onClick={() => handleDelete(elem._id)}><BsTrashFill /></span></td>
+                                    <td><span className="btn" onClick={() => handleEdit(elem._id, elem.name, elem.email, elem.mobile, elem.dob, elem.gender)}><FiEdit /></span>
+                                        <span className="btn" onClick={() => handleDelete(elem._id)}><BsTrashFill /></span></td>
                                 </tr>
                             </tbody>
                         )
@@ -83,15 +83,15 @@ export const Data = () => {
 
             </table>
             <DeleteModal id={newId} handleClose={handleClose} show={show} />
-            <EditModal 
-            id={newId} 
-            name1={name}
-            email1={email}
-            mobile1={mobile}
-            dob1={dob}
-            gender1={gender}
-            show={showEdit} 
-            closeEdit={handleCloseEdit} 
+            <EditModal
+                id={newId}
+                name1={name}
+                email1={email}
+                mobile1={mobile}
+                dob1={dob}
+                gender1={gender}
+                show={showEdit}
+                closeEdit={handleCloseEdit}
             />
         </div>
     )
