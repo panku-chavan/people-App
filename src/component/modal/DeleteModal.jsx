@@ -6,7 +6,9 @@ import Modal from 'react-bootstrap/Modal';
 
 export const DeleteModal = ({ id, handleClose, show }) => {
     const deleteSuccess = () => {
-        axios.delete(`http://localhost:5000/peoples/delete/${id}`);
+        axios.delete(`http://localhost:5000/peoples/delete/${id}`)
+        .then((res)=>console.log(res.data))
+        .catch((err)=>console.log(err));
        // window.location.reload(false);
         handleClose();
     }

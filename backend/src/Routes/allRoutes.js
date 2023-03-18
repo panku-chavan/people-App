@@ -67,7 +67,7 @@ router.route('/peoples/edit/:id').put(async (req,res)=>{
    }
 })
 
-router.route('peoples/delete/:id').delete(async (req, res, next) => {
+router.route('/peoples/delete/:id').delete(async (req, res, next) => {
     const id = req.params.id;
     try {
         await People.deleteOne({ _id: id });

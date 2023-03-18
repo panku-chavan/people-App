@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react"
 import { Button, Modal } from "react-bootstrap"
 
@@ -15,8 +16,17 @@ export const EditModal = ({id,show,closeEdit,name1,email1,mobile1,dob1,gender1})
         gender: gender
     }
     const saveEdit=()=>{
-        console.log(id)
-        console.log(info)
+       // console.log(id)
+        //console.log(info)
+        axios.put(`http://localhost:5000/peoples/edit/${id}`,info)
+        .then((res)=>console.log(res.data))
+        .catch((err)=>console.log(err))
+        closeEdit();
+        setName('');
+        setEmail('');
+        setDob('');
+        setMobile('');
+        setGender('');
     }
     return (
         <>
