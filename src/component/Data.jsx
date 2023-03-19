@@ -24,7 +24,7 @@ export const Data = () => {
     const [gender, setGender] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/peoples')
+        axios.get('https://people-app-backend-api.vercel.app/peoples')
             .then((res) => setData(res.data));
     }, [data])
   

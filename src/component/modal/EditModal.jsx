@@ -31,7 +31,7 @@ export const EditModal = ({ id, show, closeEdit, name1, email1, mobile1, dob1, g
     const saveEdit = () => {
         // console.log(id)
         //console.log(info)
-        axios.put(`http://localhost:5000/peoples/edit/${id}`, info)
+        axios.put(`https://people-app-backend-api.vercel.app/peoples/edit/${id}`, info)
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err))
         closeEdit();

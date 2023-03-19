@@ -14,14 +14,14 @@ export const DeleteModal = ({ id, handleClose, show }) => {
     }
 
     const deleteSuccess = () => {
-        axios.delete(`http://localhost:5000/peoples/delete/${id}`)
+        axios.delete(`https://people-app-backend-api.vercel.app/peoples/delete/${id}`)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
         // window.location.reload(false);
         handleClose();
         notify();
     }
-    
+
     return (
         <>
             <Modal show={show} onHide={handleClose}>

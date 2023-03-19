@@ -26,7 +26,7 @@ export const AddDetails = () => {
 
         if (name !== '' && email !== '' && mobile !== '' && dob !== '' && gender !== '') {
             console.log("form submitted", info);
-            axios.post('http://localhost:5000/peoples', info)
+            axios.post('https://people-app-backend-api.vercel.app/peoples', info)
                 .then((res) => console.log(res))
                 .catch((err) => console.log(err))
             notify();
