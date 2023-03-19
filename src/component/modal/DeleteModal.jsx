@@ -12,6 +12,7 @@ export const DeleteModal = ({ id, handleClose, show }) => {
     const notify = () => {
         toast("Deleted Successfully....")
     }
+
     const deleteSuccess = () => {
         axios.delete(`http://localhost:5000/peoples/delete/${id}`)
             .then((res) => console.log(res))
@@ -20,6 +21,7 @@ export const DeleteModal = ({ id, handleClose, show }) => {
         handleClose();
         notify();
     }
+    
     return (
         <>
             <Modal show={show} onHide={handleClose}>

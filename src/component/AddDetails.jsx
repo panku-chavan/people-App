@@ -30,6 +30,7 @@ export const AddDetails = () => {
                 .then((res) => console.log(res))
                 .catch((err) => console.log(err))
             notify();
+            navigate("/data")
         } else {
 
         }

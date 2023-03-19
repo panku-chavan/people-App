@@ -23,12 +23,11 @@ export const Data = () => {
     const [dob, setDob] = useState('');
     const [gender, setGender] = useState('');
 
-
     useEffect(() => {
         axios.get('http://localhost:5000/peoples')
             .then((res) => setData(res.data));
     }, [data])
-    //console.log(data)
+  
 
     const handleDelete = (id) => {
         console.log(id)
